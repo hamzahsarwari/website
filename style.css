@@ -1,0 +1,355 @@
+body { 
+  font-family: sans-serif; 
+  font-size: 1em;
+  line-height: 1.5;
+  line-height: 1.25;
+}
+
+a { color: blue; }
+
+.page-title {
+  width: 176px;
+  padding: 0.4rem 0.5rem;
+  padding-top: 0.55rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  border: 4px solid pink;
+  /* border-radius: 20px; */
+}
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+}
+
+.music {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.music-block {
+  margin-top: 10px;
+  width: 64px;
+  height: 64px;
+  border: 3px solid black;
+  /* border-radius: 16px; */
+}
+.music-done { 
+  border: 2px dotted pink;
+  padding: 0.5rem;
+}
+
+.intro {
+  margin-left: 1.6rem;
+}
+
+.nav {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly; align-items: center;
+}
+
+.nav a  {
+  background-color: pink;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+  margin: 0.2rem;
+}
+
+.at-link:before { content: "@"; }
+.left-arrow:after { content: " ←" };
+.down-arrow:after { content: " ↓"; }
+.up-arrow:after { content: " ↑"; }
+
+.posts {
+  padding: 0 0.4rem;
+}
+
+.blog-post {
+  border: 1px dashed black;
+  margin-bottom: 1rem;
+}
+.blog-post h1 {
+  text-align: center;
+  font-weight: normal;
+  text-transform: lowercase;
+}
+.blog-post h1:after {
+  color: blue;
+  content: " ↗";
+}
+.preview {
+  margin-left: 0.5rem;
+  width: 20rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* SCREENS */
+
+@media screen and (min-width: 60em) {
+  .flex-container {
+    flex-direction: row;
+  }
+  .music {
+    width: 300px;
+  }
+
+  .flex-filler { flex-grow: 1; }
+
+  .general {
+    display: flex;
+    flex-direction: column;
+    width: 46%
+  }
+  .intro p { font-size: 1.1em; }
+  .block {
+  }
+
+  .nav {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .nav a, .nav [role="button"] {
+    margin:  1rem;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 16px;
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    /* border: 1px solid red; */
+    writing-mode: vertical-lr;
+  }
+  .nav [role="button"]:after { content: attr(id) " ↑"; }
+  .current:after { content: " ↑"; }
+
+  .posts {
+    margin-left: 1.6rem;
+  }
+
+  .blog-post h1 {
+    font-weight: normal;
+    text-transform: lowercase;
+  }
+  .blog-post h1:after {
+    color: blue;
+    content: " ↗";
+  }
+  .preview {
+    border: none;
+    margin-left: 0.5rem;
+    width: 32rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media screen and (min-width 85.375em) {
+  body { font-size: 1.3rem; }
+}
+@media screen and (min-width 160em) {
+  body { font-size: 1.4rem; }
+}
+@media screen and (min-width 120em) {
+  body { font-size: 1.6rem; }
+}
+
+
+/* NOT MY CSS :)
+ * TODO: link
+ */
+
+div.logo {
+  border: none;
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+  position: relative;
+  background-color: white;
+}
+div.logo::before, div.logo::after {
+  z-index: 1;
+  box-sizing: border-box;
+  content: '';
+  position: absolute;
+  border: 4px solid transparent;
+  width: 0;
+  height: 0;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+div.logo::before {
+  top: 0;
+  left: 0;
+  animation: border-before 1.5s infinite;
+  animation-direction: alternate;
+}
+div.logo::after {
+  bottom: 0;
+  right: 0;
+  animation: border-after 1.5s infinite;
+  animation-direction: alternate;
+}
+div.logo > div {
+  position: absolute;
+  opacity: 0;
+}
+div.logo div.yellow{
+  border-left: 4px solid black;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  background-color: yellow;
+  animation: yellow 1.5s infinite;
+  animation-direction: alternate;
+}
+div.logo div.skyblue {
+  border-top: 4px solid black;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 0;
+  background-color: skyblue;
+  animation: skyblue 1.5s infinite;
+  animation-direction: alternate;
+}
+div.logo div.pink {
+  border-right: 4px solid black;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-color: pink;
+  animation: pink 1.5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes border-before {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: black;
+    border-right-color: transparent;
+  }
+  12.49% {
+    border-right-color: transparent;
+  }
+  12.5% {
+    height: 0;
+    width: 100%;
+    border-top-color: black;
+    border-right-color: black;
+  }
+  25%,
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: black;
+    border-right-color: black;
+  }
+}
+@keyframes border-after {
+  0%,
+  24.99% {
+    width: 0;
+    height: 0;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+  }
+  25% {
+    width: 0;
+    height: 0;
+    border-left-color: transparent;
+    border-bottom-color: black;
+  }
+  37.49% {
+    border-left-color: transparent;
+    border-bottom-color: black;
+  }
+  37.5% {
+    height: 0;
+    width: 100%;
+    border-left-color: black;
+    border-bottom-color: black;
+  }
+  50%,
+  100% {
+    width: 100%;
+    height: 100%;
+    border-left-color: black;
+    border-bottom-color: black;
+  }
+}
+@keyframes pink {
+  0%,
+  50% {
+    width: 0;
+    opacity: 0;
+  }
+  50.01% {
+    opacity: 1;
+  }
+  65%,
+  100% {
+    opacity: 1;
+    width: 27%;
+  }
+}
+
+@keyframes skyblue {
+  0%,
+  65% {
+    height: 0;
+    opacity: 0;
+  }
+  65.01% {
+    opacity: 1;
+  }
+  80%,
+  100% {
+    opacity: 1;
+    height: 50%;
+  }
+}
+
+@keyframes yellow {
+  0%,
+  75% {
+    width: 0;
+    opacity: 0;
+  }
+  75.01% {
+    opacity: 1;
+  }
+  90%,
+  100% {
+    opacity: 1;
+    width: 23%;
+  }
+}
+.rotation {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
