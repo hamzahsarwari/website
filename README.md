@@ -1,2 +1,2 @@
-# website
-Repo made for my website
+# ⚡️ [isthisnagee.github.io](http://isthisnagee.github.io)⚡️
+
